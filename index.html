@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="id" data-bs-theme="dark">
+  <!-- Pengaturan halaman: judul, tampilan perangkat, serta file CSS dan ikon -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mattzxxyy | Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/favicon.jpg" />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#menuNavigasi">
+    <!-- Latar bintang untuk menghias seluruh halaman. -->
+    <div class="latar-bintang" aria-hidden="true"></div>
+
+    <!-- Navigasi: logo, menu halaman, dan tombol unduh CV -->
+    <header class="sticky-top bg-body">
+      <nav
+        class="navbar navbar-expand-lg py-2 py-lg-3"
+        aria-label="Navigasi utama"
+      >
+        <div class="container px-4">
+          <a
+            href="#beranda"
+            class="logo navbar-brand font-monospace fw-bold fs-4 text-capitalize text-decoration-none"
+          >
+            mattzxxyy
+          </a>
+
+          <!-- Tombol untuk membuka dan menutup menu pada layar kecil -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavigasi"
+            aria-controls="menuNavigasi"
+            aria-expanded="false"
+            aria-label="Buka atau tutup menu"
+          >
+            <span
+              class="navbar-toggler-icon ikon-menu position-relative"
+              aria-hidden="true"
+            >
+              <span
+                class="garis-menu position-absolute start-0 top-50 w-100 border-top border-2 border-light"
+              ></span>
+              <span
+                class="garis-menu position-absolute start-0 top-50 w-100 border-top border-2 border-light"
+              ></span>
+              <span
+                class="garis-menu position-absolute start-0 top-50 w-100 border-top border-2 border-light"
+              ></span>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuNavigasi">
+            <ul class="navbar-nav mx-lg-auto gap-2 gap-lg-4 py-3 py-lg-0">
+              <li class="nav-item">
+                <a
+                  href="#beranda"
+                  class="nav-link position-relative d-inline-block fw-medium pb-1"
+                >
+                  Beranda
+                  <span
+                    class="garis-navigasi position-absolute start-0 bottom-0 w-100 border-top border-2"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#tentang"
+                  class="nav-link position-relative d-inline-block fw-medium pb-1"
+                >
+                  Tentang
+                  <span
+                    class="garis-navigasi position-absolute start-0 bottom-0 w-100 border-top border-2"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#kemampuan"
+                  class="nav-link position-relative d-inline-block fw-medium pb-1"
+                >
+                  Kemampuan
+                  <span
+                    class="garis-navigasi position-absolute start-0 bottom-0 w-100 border-top border-2"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#proyek"
+                  class="nav-link position-relative d-inline-block fw-medium pb-1"
+                >
+                  Proyek
+                  <span
+                    class="garis-navigasi position-absolute start-0 bottom-0 w-100 border-top border-2"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#kontak"
+                  class="nav-link position-relative d-inline-block fw-medium pb-1"
+                >
+                  Kontak
+                  <span
+                    class="garis-navigasi position-absolute start-0 bottom-0 w-100 border-top border-2"
+                    aria-hidden="true"
+                  ></span>
+                </a>
+              </li>
+            </ul>
+            <a
+              href="cv/CV_Matius.pdf"
+              download
+              class="btn btn-primary tombol-aksen tombol-cv d-none d-lg-inline-flex rounded-pill border-2 px-3 py-2"
+            >
+              Unduh CV
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Isi utama portofolio -->
+    <main>
+      <!-- Beranda: perkenalan, foto profil, dan tombol menuju proyek atau kontak -->
+      <section
+        class="bagian d-flex align-items-start align-items-lg-center pt-3 pb-4 py-lg-5"
+        id="beranda"
+      >
+        <div class="pembungkus-bagian container px-4">
+          <div
+            class="isi-beranda row g-3 g-lg-5 align-items-center justify-content-between pb-lg-5"
+          >
+            <div
+              class="teks-beranda col-12 col-lg-7 order-2 order-lg-1 text-center text-lg-start"
+            >
+              <h1 class="display-5 fw-medium mb-1">
+                Hi, Saya
+                <span
+                  class="nama-beranda display-5 fw-bold lh-1 teks-aksen position-relative d-inline-block"
+                >
+                  <span class="opacity-0">Matius</span>
+
+                  <span
+                    class="position-absolute top-0 start-0 text-nowrap"
+                    aria-hidden="true"
+                  >
+                    <span id="namaKetik">Matius</span>
+                  </span>
+                </span>
+              </h1>
+              <p class="status-beranda h4 fw-semibold mb-1">
+                Mahasiswa TI di Universitas Sumatera Utara
+              </p>
+              <div class="row g-0">
+                <div class="col-12 col-lg-10">
+                  <p class="deskripsi-beranda text-body-secondary mb-3 mb-lg-4">
+                    Perkenalkan nama saya Matius Christian Samas Simorangkir
+                    yang saat ini sedang belajar membangun dan mengembangkan
+                    website dari nol secara otodidak melalui Youtube dan
+                    Instagram, mulai dari struktur HTML, layout dengan CSS,
+                    sampai bikin interaksi hover dan animasi biar terasa hidup.
+                    Halaman yang sedang kamu lihat ini salah satu hasil
+                    belajarnya.
+                  </p>
+                </div>
+              </div>
+              <ul
+                class="daftar-tombol-beranda d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center gap-3 list-unstyled mb-0"
+              >
+                <li>
+                  <a
+                    href="#proyek"
+                    class="btn btn-primary tombol-aksen tombol-beranda tombol-proyek position-relative z-0 overflow-hidden border-2 rounded-1 px-3 py-2 fw-semibold text-capitalize"
+                  >
+                    <span
+                      class="isian-tombol position-absolute top-0 start-0 w-100 h-100 z-n1"
+                      aria-hidden="true"
+                    ></span>
+                    Lihat Proyek
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#kontak"
+                    class="btn btn-primary tombol-aksen tombol-beranda position-relative z-0 overflow-hidden border-2 rounded-1 px-3 py-2 fw-semibold text-capitalize"
+                  >
+                    <span
+                      class="isian-tombol position-absolute top-0 start-0 w-100 h-100 z-n1"
+                      aria-hidden="true"
+                    ></span>
+                    hubungi saya
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-5 order-1 order-lg-2">
+              <div
+                class="row g-0 justify-content-center justify-content-lg-start"
+              >
+                <div class="col-10 col-sm-8 col-md-7 col-lg-12">
+                  <div class="ratio ratio-1x1 z-0">
+                    <div class="bingkai-foto rounded-circle p-0">
+                      <img
+                        src="assets/foto-keren-matius.png"
+                        alt="Foto profil Matius"
+                        width="1024"
+                        height="1024"
+                        class="img-fluid d-block position-relative z-1 rounded-circle w-100 h-100 object-fit-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tentang: foto profil dan informasi pribadi -->
+      <section class="bagian py-5" id="tentang">
+        <div class="pembungkus-bagian container px-4">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-12 col-lg-5">
+              <div class="row g-0 justify-content-center">
+                <div class="col-9 col-sm-7 col-md-6 col-lg-11">
+                  <div class="ratio ratio-1x1 z-0">
+                    <div class="bingkai-foto rounded-circle p-3">
+                      <div
+                        class="cahaya-foto position-absolute top-0 start-0 w-100 h-100 rounded-circle z-n1 opacity-50"
+                        aria-hidden="true"
+                      ></div>
+                      <div
+                        class="cincin-foto position-absolute top-0 start-0 w-100 h-100 rounded-circle z-0"
+                        aria-hidden="true"
+                      ></div>
+                      <img
+                        src="assets/profile-matius.png"
+                        alt="Foto profil Matius"
+                        width="1024"
+                        height="1024"
+                        loading="lazy"
+                        class="img-fluid d-block position-relative z-1 rounded-circle w-100 h-100 object-fit-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="keterangan-foto text-center mt-4 mb-0 small">
+                Mahasiswa Teknologi Informasi
+              </p>
+            </div>
+            <div class="col-12 col-lg-7">
+              <p class="label-tentang mb-2 small fw-bold text-uppercase">
+                PERSONAL PROFILE
+              </p>
+              <h2 class="judul-tentang fw-bold mb-3 display-6">
+                Tentang <span>Saya.</span>
+              </h2>
+              <div class="row g-3 data-diri">
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Nama Lengkap
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      Matius Christian Samas Simorangkir
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Usia
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      18 Tahun
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Domisili
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      Binjai
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Universitas
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      Universitas Sumatera Utara
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Program Studi
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      Teknologi Informasi
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Minat
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      Web Development
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="rincian-diri h-100 pt-2 pb-3 border-bottom">
+                    <span class="label-rincian d-block small fw-semibold mb-2">
+                      Fokus Saat Ini
+                    </span>
+                    <p
+                      class="isi-rincian small fw-medium lh-base text-break mb-0"
+                    >
+                      HTML, CSS & JavaScript
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a
+                  href="#kemampuan"
+                  class="btn btn-primary tombol-aksen rounded-1 border-2 px-4 py-2 fw-semibold"
+                >
+                  Lihat Kemampuan
+                  <span class="ms-2" aria-hidden="true"> &nearr; </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kemampuan: daftar teknologi yang sedang dipelajari -->
+      <section
+        class="bagian py-5 min-vh-100 d-flex align-items-center"
+        id="kemampuan"
+      >
+        <div class="pembungkus-bagian container px-4">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold judul-kemampuan mb-2">Kemampuan Saya</h2>
+            <p class="mb-0">
+              Teknologi yang sedang saya pelajari dan kembangkan.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="card kartu-kemampuan h-100 position-relative z-0 border border-2 rounded-4 overflow-hidden"
+              >
+                <div
+                  class="card-body p-4 position-relative z-2 d-flex flex-column align-items-start"
+                >
+                  <span
+                    class="tingkat-kemampuan badge rounded-pill border px-3 py-2 fw-semibold"
+                    >Menengah</span
+                  >
+                  <h3 class="nama-kemampuan fw-bold mt-3 mb-3 fs-4">HTML</h3>
+                  <p
+                    class="deskripsi-kemampuan text-body-secondary mb-0 lh-base"
+                  >
+                    Mampu membangun struktur website yang rapi dan semantik,
+                    termasuk navigasi, formulir, serta berbagai elemen halaman.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="card kartu-kemampuan h-100 position-relative z-0 border border-2 rounded-4 overflow-hidden"
+              >
+                <div
+                  class="card-body p-4 position-relative z-2 d-flex flex-column align-items-start"
+                >
+                  <span
+                    class="tingkat-kemampuan badge rounded-pill border px-3 py-2 fw-semibold"
+                    >Pemula</span
+                  >
+                  <h3 class="nama-kemampuan fw-bold mt-3 mb-3 fs-4">CSS</h3>
+                  <p
+                    class="deskripsi-kemampuan text-body-secondary mb-0 lh-base"
+                  >
+                    Sedang mempelajari styling, tata letak, desain responsif,
+                    dan animasi untuk menciptakan tampilan website yang menarik.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div
+                class="card kartu-kemampuan h-100 position-relative z-0 border border-2 rounded-4 overflow-hidden"
+              >
+                <div
+                  class="card-body p-4 position-relative z-2 d-flex flex-column align-items-start"
+                >
+                  <span
+                    class="tingkat-kemampuan badge rounded-pill border px-3 py-2 fw-semibold"
+                    >Tahap Belajar</span
+                  >
+                  <h3 class="nama-kemampuan fw-bold mt-3 mb-3 fs-4">
+                    JavaScript
+                  </h3>
+                  <p
+                    class="deskripsi-kemampuan text-body-secondary mb-0 lh-base"
+                  >
+                    Sedang mempelajari dasar JavaScript, manipulasi DOM, dan
+                    event untuk membangun interaksi pada website.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daftar proyek: hasil latihan pemrograman menggunakan bahasa C -->
+      <section class="bagian py-5" id="proyek">
+        <div class="pembungkus-bagian container px-4">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">
+              Proyek <span class="aksen-proyek">Saya.</span>
+            </h2>
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-8 col-xl-7">
+                <p class="text-body-secondary mb-0 pengantar-proyek mx-auto">
+                  Beberapa proyek sederhana yang saya buat saat belajar Dasar
+                  Pemrograman menggunakan bahasa C.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Proyek 1: program biodata untuk menampilkan nama, umur, dan tinggi badan -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-biodata.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Program Biodata"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-biodata.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program Biodata"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">Program Biodata</h3>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Program sederhana untuk menampilkan nama, umur, dan tinggi
+                    badan.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> Variabel, input/output, tipe data
+                  </p>
+                  <a
+                    href="source-code/biodata.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyek 2: menghitung luas dan keliling persegi panjang -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-persegi-panjang.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Program Menghitung Persegi Panjang"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-persegi-panjang.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program Menghitung Persegi Panjang"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">Persegi Panjang</h3>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Menghitung luas dan keliling dari panjang dan lebar yang
+                    diinput.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> Operator aritmetika, input/output
+                  </p>
+                  <a
+                    href="source-code/persegi_panjang.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyek 3: mengenali karakter dan menampilkan kode ASCII -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-ascii.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Program ASCII"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-ascii.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program ASCII"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">Karakter ASCII</h3>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Mengecek huruf kecil, huruf besar, dan menampilkan kode
+                    ASCII.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> Char, if else, operator logika
+                  </p>
+                  <a
+                    href="source-code/ascii.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyek 4: menghitung jumlah deret bilangan -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-deret.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Program Deret"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-deret.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program Deret"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">Deret Bilangan</h3>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Menjumlahkan deret angka dari 1 sampai bilangan yang
+                    diinput.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> Perulangan for, validasi input
+                  </p>
+                  <a
+                    href="source-code/deret_bilangan.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyek 5: menentukan bilangan terbesar dari beberapa angka -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-terbesar.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Program Bilangan Terbesar"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-terbesar.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program Bilangan Terbesar"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">
+                    Bilangan Terbesar
+                  </h3>
+                  <span class="label-proyek-kelompok small mb-2">
+                    Proyek Kelompok
+                  </span>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Menentukan nilai terbesar dari beberapa bilangan yang
+                    diinput.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> Perulangan, perbandingan, kondisi
+                  </p>
+                  <a
+                    href="source-code/bilangan_terbesar.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyek 6: menghitung karakter, kata, dan tanda baca dalam teks -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card kartu-proyek h-100 rounded-4 overflow-hidden">
+                <a
+                  href="assets/proyek-analisis-teks.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="gambar-proyek-link d-block"
+                  aria-label="Lihat gambar hasil Analisis Teks"
+                >
+                  <div class="ratio ratio-21x9">
+                    <img
+                      src="assets/proyek-analisis-teks.png"
+                      class="card-img-top gambar-proyek w-100 h-100 object-fit-contain"
+                      alt="Preview Program Analisis Teks"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                  <h3 class="judul-proyek h6 fw-bold mb-2">Analisis Teks</h3>
+                  <p class="deskripsi-proyek small lh-base mb-3">
+                    Menghitung jumlah karakter, kata, spasi, koma, dan titik.
+                  </p>
+                  <p class="materi-proyek mb-3 small lh-base">
+                    <strong>Materi:</strong> While, getchar, switch
+                  </p>
+                  <a
+                    href="source-code/analisis_teks.c"
+                    download
+                    class="btn tombol-unduh-proyek mt-auto btn-sm rounded-3 px-3 py-2 fw-semibold"
+                  >
+                    Unduh .c
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontak: tombol detail dan tautan untuk menghubungi saya -->
+      <section class="bagian py-5" id="kontak">
+        <div class="pembungkus-bagian container px-4 py-lg-4">
+          <div class="row g-5 justify-content-between">
+            <div class="col-12 col-lg-5">
+              <h2 class="fw-bold mb-3">
+                Mari <span class="teks-aksen">Terhubung.</span>
+              </h2>
+              <p class="deskripsi-kontak mb-4 fs-6 lh-lg">
+                Punya ide proyek atau ingin berdiskusi seputar teknologi dan
+                pemrograman? Saya terbuka untuk bertukar pengalaman, belajar
+                bersama, dan berkolaborasi.
+              </p>
+              <p class="catatan-kontak mb-0 small lh-base">
+                Jangan ragu untuk menghubungi saya melalui platform berikut.
+              </p>
+              <button
+                type="button"
+                id="tombolKontak"
+                class="btn btn-primary tombol-aksen mt-3"
+              >
+                Lihat Detail Kontak
+              </button>
+
+              <!-- Detail kontak: kotak informasi yang ditampilkan melalui tombol -->
+              <div
+                id="pesanKontak"
+                class="alert alert-danger alert-dismissible text-break d-none mt-3 mb-0"
+                role="alert"
+              >
+                <p class="fw-semibold mb-2">Detail Kontak</p>
+                <p class="mb-1">Email: matiussimorangkir2@gmail.com</p>
+                <p class="mb-1">
+                  WhatsApp:
+                  <a
+                    href="https://wa.me/6283123827665"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="alert-link"
+                  >
+                    0831-2382-7665
+                  </a>
+                </p>
+                <p class="mb-1">
+                  Telepon:
+                  <a href="tel:+6283123827665" class="alert-link">
+                    0831-2382-7665
+                  </a>
+                </p>
+                <p class="mb-0">
+                  Instagram:
+                  <a
+                    href="https://www.instagram.com/matt.smrgkr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="alert-link"
+                  >
+                    @matt.smrgkr
+                  </a>
+                </p>
+                <button
+                  type="button"
+                  id="tutupPesanKontak"
+                  class="btn tombol-silang tombol-tutup-kontak position-absolute top-0 end-0 border-0 p-3 fs-5 lh-1"
+                  aria-label="Tutup detail kontak"
+                >
+                  <span
+                    class="navbar-toggler-icon ikon-menu position-relative"
+                    aria-hidden="true"
+                  >
+                    <span
+                      class="garis-menu position-absolute start-0 top-50 w-100 border-top border-2 border-light"
+                    ></span>
+                    <span
+                      class="garis-menu position-absolute start-0 top-50 w-100 border-top border-2 border-light"
+                    ></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="daftar-kontak d-flex flex-column">
+                <a
+                  href="mailto:matiussimorangkir2@gmail.com"
+                  class="tautan-kontak d-flex justify-content-between align-items-center gap-3 py-3 py-md-4 px-1 text-decoration-none border-bottom border-top"
+                >
+                  <div>
+                    <h3 class="nama-kontak h6 fw-semibold mb-1">Email</h3>
+                    <p class="keterangan-kontak mb-0 small lh-base">
+                      Untuk komunikasi dan kolaborasi
+                    </p>
+                  </div>
+                  <span
+                    class="panah-kontak fs-4 flex-shrink-0"
+                    aria-hidden="true"
+                  >
+                    &nearr;
+                  </span>
+                </a>
+                <a
+                  href="https://wa.me/6283123827665"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tautan-kontak d-flex justify-content-between align-items-center gap-3 py-3 py-md-4 px-1 text-decoration-none border-bottom"
+                >
+                  <div>
+                    <h3 class="nama-kontak h6 fw-semibold mb-1">WhatsApp</h3>
+                    <p class="keterangan-kontak mb-0 small lh-base">
+                      Mari berdiskusi melalui WhatsApp
+                    </p>
+                  </div>
+                  <span
+                    class="panah-kontak fs-4 flex-shrink-0"
+                    aria-hidden="true"
+                  >
+                    &nearr;
+                  </span>
+                </a>
+                <a
+                  href="tel:+6283123827665"
+                  class="tautan-kontak d-flex justify-content-between align-items-center gap-3 py-3 py-md-4 px-1 text-decoration-none border-bottom"
+                >
+                  <div>
+                    <h3 class="nama-kontak h6 fw-semibold mb-1">Telepon</h3>
+                    <p class="keterangan-kontak mb-0 small lh-base">
+                      Hubungi saya secara langsung
+                    </p>
+                  </div>
+                  <span
+                    class="panah-kontak fs-4 flex-shrink-0"
+                    aria-hidden="true"
+                  >
+                    &nearr;
+                  </span>
+                </a>
+                <a
+                  href="https://www.instagram.com/matt.smrgkr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tautan-kontak d-flex justify-content-between align-items-center gap-3 py-3 py-md-4 px-1 text-decoration-none border-bottom"
+                >
+                  <div>
+                    <h3 class="nama-kontak h6 fw-semibold mb-1">Instagram</h3>
+                    <p class="keterangan-kontak mb-0 small lh-base">
+                      Kenali saya lebih dekat
+                    </p>
+                  </div>
+                  <span
+                    class="panah-kontak fs-4 flex-shrink-0"
+                    aria-hidden="true"
+                  >
+                    &nearr;
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Penutup: hak cipta, keterangan halaman, dan tautan kembali ke atas -->
+    <footer class="kaki-halaman py-4 border-top text-center text-md-start">
+      <div class="container px-4">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+        >
+          <p class="mb-0 small text-body-secondary">
+            &copy; 2026 Matius. All rights reserved.
+          </p>
+          <p class="mb-0 small text-body-secondary">
+            Dibangun dengan HTML, CSS, dan JavaScript.
+          </p>
+          <a
+            href="#beranda"
+            class="kembali-ke-atas small fw-medium text-decoration-none"
+          >
+            Kembali ke atas &uarr;
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Memuat JavaScript Bootstrap, efek ketik nama, dan interaksi halaman -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,727 @@
+/* Tema gelap: warna dasar halaman dan warna teks Bootstrap */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0b0218;
+  --bs-body-bg-rgb: 11, 2, 24;
+  --bs-body-color: #e2e8f0;
+  --bs-body-color-rgb: 226, 232, 240;
+}
+
+/* Latar halaman: menampilkan gradasi warna di belakang isi halaman */
+body {
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before,
+header {
+  background-image:
+    radial-gradient(
+      ellipse 60% 80% at 0% 20%,
+      rgba(158, 28, 85, 0.65),
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 55% 70% at 100% 10%,
+      rgba(92, 0, 118, 0.65),
+      transparent 80%
+    );
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}
+
+/* Pengaturan umum: warna teks aksen dan jarak tujuan saat menggulir ke bagian halaman */
+.teks-aksen {
+  color: #ff3366;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+#beranda {
+  min-height: calc(100vh - 5rem);
+  min-height: calc(100svh - 5rem);
+}
+
+/* Latar bintang: membuat titik bintang, animasi kelip, dan pengurangan gerak */
+.latar-bintang {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.latar-bintang::before,
+.latar-bintang::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #ffffff 90%, transparent),
+    radial-gradient(1.5px 1.5px at 110px 150px, #ffd0e5 90%, transparent),
+    radial-gradient(1px 1px at 50px 90px, #ddd6ff 90%, transparent);
+  background-repeat: repeat;
+}
+
+.latar-bintang::before {
+  background-size:
+    180px 220px,
+    260px 300px,
+    360px 440px;
+  animation: kelip-bintang 5s ease-in-out infinite alternate;
+}
+
+.latar-bintang::after {
+  background-size:
+    220px 260px,
+    320px 380px,
+    460px 520px;
+  background-position:
+    80px 140px,
+    40px 210px,
+    170px 55px;
+  animation: kelip-bintang 8s ease-in-out -3s infinite alternate;
+}
+
+@keyframes kelip-bintang {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .latar-bintang::before,
+  .latar-bintang::after {
+    animation: none;
+    opacity: 0.45;
+  }
+}
+
+/* Warna tombol utama saat biasa, disorot, ditekan, dan mendapat fokus */
+.tombol-aksen {
+  --bs-btn-color: white;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #ff3366;
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: #be185d;
+  --bs-btn-hover-border-color: #ff3366;
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: #9d174d;
+  --bs-btn-active-border-color: #ff3366;
+  --bs-btn-focus-shadow-rgb: 255, 51, 102;
+}
+
+/* Navigasi: mengatur warna menu dan gradasi tulisan logo */
+.navbar {
+  --bs-navbar-color: #e2e8f0;
+  --bs-navbar-hover-color: #ff3366;
+  --bs-navbar-active-color: #ff3366;
+}
+
+.logo {
+  background: linear-gradient(
+    to right,
+    #cf0d86 0%,
+    #ff02c1 0%,
+    #ff7100 100%,
+    #cf0073 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tombol menu: mengubah tiga garis menjadi tanda silang saat menu dibuka */
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler:focus-visible {
+  outline: 2px solid #ff3366;
+  outline-offset: 3px;
+}
+
+.ikon-menu {
+  background-image: none;
+}
+
+.garis-menu {
+  transform-origin: center;
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.garis-menu:first-child {
+  transform: translateY(-0.5rem);
+}
+
+.garis-menu:last-child {
+  transform: translateY(0.5rem);
+}
+
+.navbar-toggler[aria-expanded="true"] .garis-menu:first-child {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .garis-menu:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .garis-menu:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Garis bawah menu saat disorot atau sedang aktif */
+.garis-navigasi {
+  --bs-border-color: #ff3366;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .garis-navigasi,
+.nav-link:focus-visible .garis-navigasi {
+  transform: scaleX(1);
+}
+
+.nav-link.active .garis-navigasi {
+  transform: scaleX(1);
+}
+
+/* Tombol unduh CV: efek cahaya dan gerakan saat disorot atau ditekan */
+.tombol-cv {
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-bg: transparent;
+  transition:
+    color 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
+}
+
+.tombol-cv:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 10px rgba(255, 51, 102, 0.8),
+    0 0 30px rgba(255, 51, 102, 0.6),
+    0 0 60px rgba(255, 51, 102, 0.4);
+}
+
+.tombol-cv:active {
+  color: #ff3366;
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .garis-menu {
+    transition: none;
+  }
+}
+
+/* Tombol beranda: efek cahaya dan animasi isian pada tombol proyek serta kontak */
+.tombol-beranda {
+  --bs-btn-hover-bg: transparent;
+}
+
+.isian-tombol {
+  background-color: #be185d;
+  clip-path: circle(0% at 50% 50%);
+}
+
+.tombol-beranda,
+.tombol-beranda .isian-tombol {
+  transition: none;
+}
+
+.tombol-beranda.tombol-proyek {
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-bg: transparent;
+}
+
+.tombol-beranda.tombol-proyek .isian-tombol {
+  background-color: #be185d;
+  clip-path: circle(100% at 50% 50%);
+}
+
+.tombol-beranda:hover,
+.tombol-beranda:focus-visible {
+  box-shadow:
+    0 0 10px rgba(255, 51, 102, 0.8),
+    0 0 30px rgba(255, 51, 102, 0.6),
+    0 0 60px rgba(255, 51, 102, 0.4);
+
+  transition: box-shadow 0.2s ease;
+}
+
+.tombol-beranda:hover .isian-tombol,
+.tombol-beranda:focus-visible .isian-tombol {
+  clip-path: circle(100% at 50% 50%);
+  box-shadow:
+    0 0 10px rgba(255, 51, 102, 0.8),
+    0 0 30px rgba(255, 51, 102, 0.6),
+    0 0 60px rgba(255, 51, 102, 0.4);
+
+  transition: clip-path 0.65s ease-in-out;
+}
+
+.tombol-beranda.tombol-proyek:hover .isian-tombol,
+.tombol-beranda.tombol-proyek:focus-visible .isian-tombol {
+  clip-path: circle(0% at 50% 50%);
+  box-shadow: none;
+}
+
+/* Tentang: kumpulan warna untuk teks dan rincian data diri */
+#tentang {
+  --tentang-merah-muda: #ff3366;
+  --tentang-ungu: #a855f7;
+  --tentang-teks: #e2e8f0;
+  --tentang-teks-redup: #b8afc8;
+}
+
+/* Foto tentang: gradasi cincin yang berputar dan cahaya di belakang foto */
+@property --sudut {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cincin-foto,
+.cahaya-foto {
+  background: conic-gradient(
+    from var(--sudut),
+    #cf0d86,
+    #ff02c1,
+    #ff7100,
+    #cf0073,
+    #cf0d86
+  );
+  animation: putar-cincin 3.5s linear infinite;
+}
+
+.cahaya-foto {
+  filter: blur(50px);
+}
+
+@keyframes putar-cincin {
+  from {
+    --sudut: 0deg;
+  }
+  to {
+    --sudut: 360deg;
+  }
+}
+
+/* Teks tentang: keterangan foto, judul, dan rincian data diri */
+#tentang .keterangan-foto {
+  color: var(--tentang-teks-redup);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+#tentang .label-tentang {
+  color: var(--tentang-merah-muda);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+#tentang .judul-tentang {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--tentang-teks);
+}
+
+#tentang .judul-tentang span {
+  background: linear-gradient(90deg, #ff3366, #d946ef, #a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#tentang .rincian-diri {
+  transition: border-color 0.3s ease;
+}
+
+#tentang .label-rincian {
+  color: #ff80ad;
+  font-size: 0.78rem;
+  letter-spacing: 0.4px;
+}
+
+#tentang .isi-rincian {
+  color: var(--tentang-teks);
+  font-size: 0.93rem;
+}
+
+#tentang .rincian-diri:hover {
+  border-color: var(--tentang-ungu);
+}
+
+/* Penyesuaian ukuran judul tentang pada layar di bawah 992 piksel */
+@media (max-width: 991.98px) {
+  #tentang .judul-tentang {
+    font-size: 2rem;
+  }
+}
+
+/* Kemampuan: warna judul, kartu, tingkat kemampuan, dan animasi bingkai saat disorot */
+#kemampuan {
+  --kemampuan-merah-muda: #ff3366;
+  --kemampuan-magenta: #ff4fa3;
+  --kemampuan-ungu: #a855f7;
+  --kemampuan-latar: #160b24;
+}
+
+.judul-kemampuan {
+  background: linear-gradient(
+    90deg,
+    var(--kemampuan-merah-muda),
+    var(--kemampuan-magenta),
+    var(--kemampuan-ungu)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#kemampuan .kartu-kemampuan {
+  isolation: isolate;
+  background: var(--kemampuan-merah-muda);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#kemampuan .kartu-kemampuan::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  z-index: 0;
+  background: conic-gradient(
+    #ff3366,
+    #ff4fa3,
+    #d946ef,
+    #8b5cf6,
+    #ff4fa3,
+    #ff3366
+  );
+  opacity: 0;
+  animation: putar-bingkai-kemampuan 4s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.3s ease;
+}
+
+#kemampuan .kartu-kemampuan::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 1;
+  border-radius: 14px;
+  background: var(--kemampuan-latar);
+}
+
+#kemampuan .kartu-kemampuan .card-body {
+  min-height: 230px;
+}
+
+.nama-kemampuan {
+  color: var(--kemampuan-merah-muda);
+  transition: color 0.3s ease;
+}
+
+.tingkat-kemampuan {
+  color: #ff80ad;
+  background: rgba(255, 51, 102, 0.1);
+}
+
+.deskripsi-kemampuan {
+  font-size: 0.95rem;
+}
+
+#kemampuan .kartu-kemampuan:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 15px rgba(255, 51, 102, 0.25),
+    0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+#kemampuan .kartu-kemampuan:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+#kemampuan .kartu-kemampuan:hover .nama-kemampuan {
+  color: #ff80c5;
+}
+
+@keyframes putar-bingkai-kemampuan {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Penyesuaian tinggi kartu kemampuan pada layar kecil dan pengurangan animasi */
+@media (max-width: 767.98px) {
+  #kemampuan .kartu-kemampuan .card-body {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #kemampuan .kartu-kemampuan::before {
+    animation: none;
+  }
+  #kemampuan .kartu-kemampuan:hover {
+    transform: none;
+  }
+}
+
+/* Proyek: tampilan kartu, gambar, teks, serta tombol unduh untuk semua proyek */
+#proyek .aksen-proyek {
+  background: linear-gradient(90deg, #ff3366, #d946ef, #a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#proyek .pengantar-proyek {
+  max-width: 620px;
+}
+
+#proyek .kartu-proyek {
+  background: rgba(22, 11, 36, 0.95);
+  border-color: rgba(255, 51, 102, 0.18);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#proyek .kartu-proyek:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 70, 239, 0.45);
+  box-shadow:
+    0 10px 25px rgba(255, 51, 102, 0.12),
+    0 8px 20px rgba(168, 85, 247, 0.1);
+}
+
+#proyek .gambar-proyek {
+  background: #12081f;
+}
+
+#proyek .gambar-proyek-link {
+  display: block;
+  overflow: hidden;
+}
+
+#proyek .gambar-proyek-link img {
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+#proyek .gambar-proyek-link:hover img {
+  transform: scale(1.03);
+}
+
+#proyek .gambar-proyek-link:focus-visible {
+  outline: 2px solid #ff80ad;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #proyek .gambar-proyek-link img {
+    transition: none;
+  }
+
+  #proyek .gambar-proyek-link:hover img {
+    transform: none;
+  }
+}
+
+#proyek .label-proyek-kelompok {
+  color: #ff80ad;
+}
+
+#proyek .judul-proyek {
+  color: #e2e8f0;
+  font-size: 1.05rem;
+}
+
+#proyek .deskripsi-proyek {
+  color: #b8afc8;
+  font-size: 0.9rem;
+}
+
+#proyek .materi-proyek {
+  color: #ff80ad;
+  font-size: 0.82rem;
+}
+
+#proyek .tombol-unduh-proyek {
+  color: #ff80ad;
+  border-color: #ff3366;
+  background: transparent;
+  font-size: 0.85rem;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#proyek .tombol-unduh-proyek:hover,
+#proyek .tombol-unduh-proyek:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(90deg, #be185d, #9333ea);
+  border-color: #d946ef;
+  box-shadow: 0 0 18px rgba(255, 51, 102, 0.18);
+}
+
+/* Penyesuaian teks proyek pada layar kecil dan pengurangan gerakan kartu */
+@media (max-width: 575.98px) {
+  #proyek .judul-proyek {
+    font-size: 1rem;
+  }
+  #proyek .deskripsi-proyek {
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #proyek .kartu-proyek,
+  #proyek .tombol-unduh-proyek {
+    transition: none;
+  }
+  #proyek .kartu-proyek:hover {
+    transform: none;
+  }
+}
+
+/* Kontak: warna keterangan, garis tautan, serta gerakan teks dan panah saat disorot */
+.deskripsi-kontak {
+  color: #b8afc8;
+}
+
+.catatan-kontak {
+  color: #ff80ad;
+}
+
+.tautan-kontak {
+  --bs-border-color: rgba(255, 51, 102, 0.25);
+  transition: border-color 0.3s ease;
+}
+
+.tautan-kontak > div {
+  transition: transform 0.3s ease;
+}
+
+.nama-kontak {
+  color: #e2e8f0;
+  transition: color 0.3s ease;
+}
+
+.keterangan-kontak {
+  color: #a9a0b8;
+}
+
+.panah-kontak {
+  color: #ff3366;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.tautan-kontak:hover,
+.tautan-kontak:focus-visible {
+  --bs-border-color: #ff3366;
+}
+
+.tautan-kontak:hover > div,
+.tautan-kontak:focus-visible > div {
+  transform: translateX(5px);
+}
+
+.tautan-kontak:hover .nama-kontak,
+.tautan-kontak:focus-visible .nama-kontak {
+  color: #ff4fa3;
+}
+
+.tautan-kontak:hover .panah-kontak,
+.tautan-kontak:focus-visible .panah-kontak {
+  color: #d946ef;
+  transform: translate(4px, -4px);
+}
+
+/* Penutup: warna garis, tautan kembali ke atas, dan pengurangan gerak pada tautan */
+.kaki-halaman {
+  --bs-border-color: rgba(255, 51, 102, 0.2);
+}
+
+.kembali-ke-atas {
+  color: #ff80ad;
+  transition: color 0.3s ease;
+}
+
+.kembali-ke-atas:hover {
+  color: #d946ef;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tautan-kontak,
+  .tautan-kontak > div,
+  .nama-kontak,
+  .panah-kontak,
+  .kembali-ke-atas {
+    transition: none;
+  }
+}
+
+.tombol-silang {
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-bg: transparent;
+  background-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.tombol-silang:focus {
+  box-shadow: none;
+}
+
+.tombol-silang:focus-visible {
+  outline: 2px solid #ff3366;
+  outline-offset: 3px;
+}
+
+.tombol-silang:active {
+  transform: scale(0.9);
+}
+
+.tombol-tutup-kontak .garis-menu:first-child {
+  transform: rotate(45deg);
+}
+
+.tombol-tutup-kontak .garis-menu:last-child {
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tombol-silang {
+    transition: none;
+  }
+}
